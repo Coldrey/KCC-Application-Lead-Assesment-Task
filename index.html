@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Lou Geh Dealership</h1>
+        <nav>
+          <a href="#profile1">ADD CUSTOMER</a>
+          <a href="#profile2">ADD SALE</a>
+          <a href="#profile3">ADD CAR</a>
+          <a href="#profile4">ADD SERVICE RECORD</a>
+          <a href="#profile5">ADD SALES PERSON</a>
+          <a href="#profile6">CREATE INVOICE</a>
+        </nav>
+      </header>
+
+    <main>
+    <article id="profile1" class="card">
+        <figure>
+             <figcaption>ADD CUSTOMER</figcaption>
+        </figure>
+        <form action="controllers/UserController.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone"><br><br>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address"><br><br>
+            
+            <input type="submit" value="Add Customer">
+        </form>
+    </article>
+
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
