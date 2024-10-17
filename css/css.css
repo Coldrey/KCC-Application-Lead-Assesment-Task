@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #2f2f32;
+  }
+  
+  .logo {
+    cursor: pointer;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li a {
+    transition: color 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: #0088a9;
+  }
+  
+  .cta {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+  }
+  
+  /* Mobile Nav */
+  
+  .menu {
+    display: none;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+  }
+  
+  .overlay--active {
+    width: 100%;
+  }
+  
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+  }
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: color 0.3s ease 0s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #0088a9;
+  }
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .nav__links,
+    .cta {
+      display: none;
+    }
+    .menu {
+      display: initial;
+    }
+  }
+
+  /* Style for the .cta links */
+  .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white; /* Text color */
+    background-color: #2577ba; /* Default background color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 25px; /* Rounded edges */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the .cta links */
+  .cta:hover {
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+    background-color: #1c42ca; /* Change background color on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add text shadow */
+  }
+
+
+  .logo img {
+    width: 100px;  /* Set your desired width */
+    height: 50px; /* Set a smaller height to create the oval shape */
+    border-radius: 50%; /* This makes the image oval */
+    transition: transform 0.3s ease; /* Adds a smooth pop-up effect */
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Enlarges the image on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow for the pop-up effect */
+}
+
+/* || PROFILE CARD */
+  
+.card {
+  scroll-margin-top: 10rem;
+  width: min(100%, 350px); /* Adjust max width and make it responsive */
+  background-color: #cbd5e1;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto; /* Ensures the card stays centered in the flex container */
+}
+
+.card figure {
+  display: center;
+  flex-flow: center;
+}
+
+
+.card figcaption{
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 0.5rem;  /* Reduce the padding to move cards upwards */
+  }
+  .card {
+    margin-top: 1rem; /* Optional: Add margin for spacing if needed */
+    width: min(100%, 400px);
+  }
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+  nav {
+    display: none;
+  }
+  .card {
+    margin-top: 0.5rem; /* Adjust this value to move the cards upwards */
+    width: min(100%, 325px);
+  }
+  .card figure {
+    flex-flow: column-reverse;
+  }
+  .card p {
+    margin-top: 1rem;
+  }
+}
+
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+  .card {
+    width: min(100%,400px);
+  }
+  .card:nth-child(2){
+    order: -1;
+  }
+}
+
+/* || XL  */
+@media screen and (min-width: 1200px) {
+  .card {
+    width: min(calc(335-1rem), 500px);
+  }
+}
+
+/* || MOBILE DEVICE LANDSCAPE  */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  h1 { font-size: 1.5rem;}
+
+  nav {
+    display: none;
+  }
+  main {
+    flex-flow: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  .card {
+    width: min(calc(33%-0.25rem),200px);
+  }
+  .card figcaption, .card p {
+    font-size: 1.25rem;
+  }
+
+}
+
+main {
+  display: flex;
+  justify-content: center; /* Centers the card horizontally */
+  align-items: center; /* Centers the card vertically */
+  min-height: 100vh; /* Ensure the container takes up full viewport height */
+}
+
+
+/* begin reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img { display: block;}
+
+/*  begin reset */
+
+/* utility classes */
+
+.nowrap {
+  white-space: nowrap;
+
+}
+.offscreen {
+  position: absolute;
+}
+/*  end utility classes */
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+header {
+  height: 80px; /* Example header height */
+}
+
+.container {
+  background-image: url('/1695980176268.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: calc(100vh - 80px); /* Adjust based on header height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.h1 {
+  max-width: 800px; /* Set a maximum width for the heading */
+  margin: 0 auto; /* Center the heading */
+  padding: 20px; /* Add some padding */
+  text-align: left; /* Align text to the left */
+  font-size: 100%;
+  color: antiquewhite;
+  text-shadow: 2px 2px 5px #000;
+}
+.h2 {
+  max-width: 800px; /* Set a maximum width for the heading */
+  margin: 0 auto; /* Center the heading */
+  padding: 20px; /* Add some padding */
+  text-align: left; /* Align text to the left */
+  font-size: 200%;
+  color: antiquewhite;
+  text-shadow: 2px 2px 5px #000;
+}
+
+ul {
+  max-width: 800px; /* Set a maximum width for the lists */
+  margin: 0 auto; /* Center the lists */
+  padding: 0 20px; /* Add padding for the lists */
+  list-style-type: disc; /* Use bullets for the list items */
+  font-size: 150%;
+  color: antiquewhite;
+  text-shadow: 2px 2px 5px #000;
+}
+
+p {
+  max-width: 800px; /* Set a maximum width for paragraphs */
+  margin: 0 auto; /* Center the paragraphs */
+  font-size: 100%;
+  color: antiquewhite;
+  text-shadow: 2px 2px 5px #000;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css">
+    <title>document</title>
+</head>
+<body>
+    <body>
+        <header>
+            <a class="logo" href="/"><img src="logo.jpg" alt="logo"></a>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="#profile3">Add Service Record</a></li>
+                </ul>
+
+            </nav>
+            <a class="cta" href="Customer.html">Customer</a>
+            <a class="cta" href="Sale.html">Sale</a>
+            <a class="cta" href="Car.html">Car</a>
+            <a class="cta" href="Service.html">Service</a>
+            <a class="cta" href="Sales.html">Dealer</a>
+            <a class="cta" href="Invoice.html">Invoice</a>
+        </header>
+        <div class="container">
+        <article id="profile4" class="card">
+            <figure>
+                <figcaption>ADD SERVICE RECORD</figcaption>
+           </figure>
+            <form action="controllers/ServiceController.php" method="POST">
+                <label for="customer_id">Customer ID:</label>
+                <input type="number" id="customer_id" name="customer_id" required><br><br>
+    
+                <label for="car_id">Car ID:</label>
+                <input type="number" id="car_id" name="car_id" required><br><br>
+    
+                <label for="mechanic_name">Mechanic Name:</label>
+                <input type="text" id="mechanic_name" name="mechanic_name" required><br><br>
+    
+                <label for="service_date">Service Date:</label>
+                <input type="date" id="service_date" name="service_date" required><br><br>
+    
+                <label for="service_description">Service Description:</label>
+                <textarea id="service_description" name="service_description" required></textarea><br><br>
+    
+                <label for="parts_used">Parts Used:</label>
+                <textarea id="parts_used" name="parts_used"></textarea><br><br>
+    
+                <label for="total_cost">Total Cost:</label>
+                <input type="number" step="0.01" id="total_cost" name="total_cost" required><br><br>
+    
+                <input type="submit" value="Add Service Record">
+            </form>
+        </article>
+        </div>
+        <script type="text/javascript" src="mobile.js"></script>
+    </body>
+</html>
